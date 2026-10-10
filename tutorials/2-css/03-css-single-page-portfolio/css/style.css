@@ -1,4 +1,18 @@
-/* CSS resets */
+/* ///////// COLOR PALETTE ///////// */
+:root {
+    --bg-color-1: rgb(255, 249, 239);
+    --bg-color-2: rgb(180, 104, 79);
+    --font: #db8b99;
+    --accent-color: #c94a4a;
+    --accent-color-2: #ffc7c7;
+}   
+
+
+
+
+
+
+/* ///////// CSS resets ///////// */
 
 *{
     margin: 0;
@@ -10,7 +24,6 @@ html {
     font-size: 100%;
 }
 
-/* ///////// GENERAL CSS  ///////// */
 @font-face {
     font-family: "take";
     src: url(fonts/take.otf)
@@ -24,31 +37,53 @@ html {
     src: url(fonts/against.otf);
 }
 
+
+/* ///////// GENERAL CSS  ///////// */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: rgb(255, 249, 239);
+    background-color: var(--bg-color-1);
     font-family: "take";
     font-size: 2.5rem;
-    color: #db8b99;
+    color: var(--font);
     line-height: 1.5;
-    text-align: center;
+    text-align: justify;
+}
 
+@media (max-width: 700px) {
+    body {
+        font-size: 2rem;
+    }
 }
 
 header {
     background-image: url("../images/cover.jpg");
-    background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 7.5rem;
     margin-bottom: 8rem;
-    /* background-color: rgb(180, 104, 79); */
     text-align: center;
     font-family: 'take';
 }
 
+@media (max-width: 700px) {
+    header {
+        padding-left: 2rem;
+    }
+}
+
+/* h1 {
+    font-size: 4rem;
+    color: var(--font);
+    font-family: 'spark';
+} */
+
 header h1 {
     font-size: 3.5rem;
-    color: #db8b99;
+    color: var(--font);
     font-family: 'again';
 }
 
@@ -60,14 +95,40 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #db8b99;
-    margin: 0.1rem;
+    color: var(--font);
+    margin: 0.7rem;
+    font-size: 1.7rem;
+    font-family: 'again';
+    transition: color 0.5s ease;
+}
 
+@media (max-width: 750px) {
+    nav a {
+        font-size: 0.5rem;
+    }
+}
+
+nav a:hover {
+    color: var(--accent-color);
+    /* text-decoration: underline; */
+    transform: scale(1.1);
 }
 
 main {
     max-width: 60rem;
     margin: 2rem auto;
+}
+
+@media (max-width: 850px) {
+    main {
+        margin: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        margin: 1rem;
+    }
 }
 
 .about-section, .portfolio-section, .contact-section {
@@ -94,12 +155,23 @@ main {
     margin-bottom: 5rem;
     background-color: rgb(255, 243, 239);
     padding: 4rem;
-    text-align: justify;
+    /* text-align: justify; */
     border-radius: 3.5rem;
-    border: 5px solid #ffc7c7;
+    border: 5px solid var(--accent-color-2);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 800px) {
+    .portfolio-item {
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .portfolio-item {
+        padding: 3rem;
+    }
+}
 
 .portfolio-item img {
     max-width: 100%;
@@ -123,10 +195,20 @@ main {
     /* background-color: #db8b99; */
 }
 
+
 footer {
-    background-color: #db8b99;
+    background-color: var(--font);
     color: #fff;
     padding: 1rem;
     text-align: right;
     font-size: 1.5rem;
 }
+
+.accent-1 {
+    color: var(--accent-color);
+}
+
+.accent-2 {
+    color: var(--accent-color-2);
+}
+
