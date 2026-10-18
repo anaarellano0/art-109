@@ -116,6 +116,15 @@ html {
     padding-top: 1.5rem;
 }
 
+.fade {
+    text-align: center;
+    animation: fade 3s infinite alternate;
+}
+
+@keyframes fade {
+    100% {opacity: 6;}
+    0% {opacity: 0;}
+}
 
 /* ////// EO QUOTE DIV////////  */
 
